@@ -214,9 +214,10 @@ docker rm xxx; docker run -it --name xxx -p 4567:4567 ro31337/rubybook-save-the-
 
 Примечание:
 Если Win10x64 выдает: `require': cannot load such file -- sqlite3/sqlite3_native (LoadError)
-Нужно выполнить в консоли
-gem uninstall sqlite3 --all
-gem install sqlite3 --platform=ruby
+Нужно выполнить в консоли:
+
+* gem uninstall sqlite3 --all
+* gem install sqlite3 --platform=ruby
 
 Урок 29
 
@@ -224,6 +225,13 @@ gem install sqlite3 --platform=ruby
 - rake
 - tux
 - migrations
+
+Примечание:
+Если на Win10x64 выдает "An error occurred while installing sqlite3 (1.4.0), and Bundler cannot continue.
+Make sure that `gem install sqlite3 -v '1.4.0' --source 'https://rubygems.org/'`
+succeeds before bundling..."
+  Необходимо в gem.file прописать: 
+* gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
 
 
 Урок 30 
